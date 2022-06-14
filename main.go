@@ -78,7 +78,11 @@ func main() {
 	Host := "localhost"
 	SrvAddress := fmt.Sprintf("%s:%s", Host, strconv.Itoa(Port))
 
+	SetupDabatase()
+
 	fmt.Println("Server is up and running at", SrvAddress)
+
+	// DbConn.Query()
 
 	// Handlers
 	http.Handle("/jobs", middleware(http.HandlerFunc(jobHandlers)))
